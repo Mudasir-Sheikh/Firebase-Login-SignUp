@@ -15,11 +15,13 @@ let register = () => {
             // Signed up 
             const user = userCredential.user;
             console.log("user signedup", user)
+            alert("New Account Created!\nPlease Login Now")
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log("error:", error)
+            alert(`Something Went Wrong!\nError:${errorMessage}`)
 
         });
 
