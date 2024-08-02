@@ -6,6 +6,10 @@ import { auth, onAuthStateChanged, signOut } from "./firebase.js";
 
 let name = document.getElementById("name")
 let email = document.getElementById("email");
+let loader = document.getElementById("loader")
+let profile = document.getElementById("profile")
+
+
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -14,17 +18,24 @@ onAuthStateChanged(auth, (user) => {
     name.innerHTML = user.email.slice(0, user.email.indexOf("@"))
     email.innerHTML = user.email;}
 
+    //Loader Functionality
+    loader.style.display = "none"
+    profile.classList.remove("hidden")
+
+
     //used for that if user is login then he will be directed to profile page
     if(location.pathname !== "/Profile_ViewCart.html")
     window.location = "/Profile_ViewCart.html"
 
+
+
   } else {
     console.log("User is Logout here's Details", user)
-    
     //if not login then he can not directly go to profile page 
     if (window.location.pathname !== "/Login.html"){
     window.location = "/Login.html"
     }
+
 
   }
 });
