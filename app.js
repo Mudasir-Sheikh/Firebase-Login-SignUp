@@ -10,13 +10,21 @@ let email = document.getElementById("email");
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("User is Login Here's Details", user)
+    if (name && email){  //used to overcome error
     name.innerHTML = user.email.slice(0, user.email.indexOf("@"))
-    email.innerHTML = user.email;
-    // window.location = "Profile_ViewCart.html"
+    email.innerHTML = user.email;}
+
+    //used for that if user is login then he will be directed to profile page
+    if(location.pathname !== "/Profile_ViewCart.html")
+    window.location = "/Profile_ViewCart.html"
 
   } else {
     console.log("User is Logout here's Details", user)
-    // window.location = "Login.html"
+    
+    //if not login then he can not directly go to profile page 
+    if (window.location.pathname !== "/Login.html"){
+    window.location = "/Login.html"
+    }
 
   }
 });
