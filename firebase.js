@@ -5,7 +5,7 @@ import { getAuth , onAuthStateChanged , signOut , sendEmailVerification } from "
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
-import { doc , setDoc , getFirestore } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { doc , setDoc , getFirestore , getDoc  } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 
 
@@ -40,5 +40,6 @@ export{
     sendEmailVerification,
     doc,
     setDoc,
-    db
+    db,
+    getDoc
 }

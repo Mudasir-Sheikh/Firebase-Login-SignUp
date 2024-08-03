@@ -1,8 +1,15 @@
+import { setDoc, doc, db} from "./firebase.js"
+
+
+
 fetch('https://fakestoreapi.com/products')
     .then((data) => data.json())
     .then(result => {
         console.log("result", result)
         renderUI(result)
+        // addProductData(result)
+        // return result
+
     })
     .catch(error => {
         console.log("error", error)
@@ -47,4 +54,22 @@ const renderUI = (items) => {
       }
     }
 
-  
+
+
+
+
+
+
+
+
+  let addProductData = async(product){
+   const response =  await setDoc(doc(db, "Products"), {
+      id: ,
+      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      price: 109.95,
+      category: "men's clothing",
+      price:
+      });
+      
+  }
+
