@@ -1,0 +1,186 @@
+.card {
+    /* margin: 0.5rem 0.7rem; */
+    margin: auto;
+    padding: 5px;
+    height: 9rem;
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1rem;
+}
+
+.category, .rating, .price {
+    font-size: 0.875rem;
+    margin-bottom: 5px;
+}
+
+.card-text {
+    font-size: 0.75rem;
+}
+
+.btn {
+    font-size: 0.85rem !important;
+    margin-top: 5px;
+    margin-right: 7px;
+}
+.navbar {
+    background-color: #343a40;
+}
+#navbarNav{
+    margin-right: 4rem !important;
+     
+
+}
+.cust li{
+    margin: 0rem 0.5rem;
+    
+}
+.cust li:hover{
+    border: 1px solid rgba(128, 128, 128, 0.644);
+    background-color: hsl(216, 90%, 44%);
+    border-radius: 5px;
+    color: white !important;
+
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin: 0px 10px;
+    gap: 1rem;
+}
+.navbar-brand img{
+    border-radius: 10px;
+}
+
+.j{
+    font-size: 1.85rem;
+    margin:  1px;
+}
+.nav-link {
+    font-size: 1rem;
+    margin-left: 10px;
+    padding: 1px 3px;
+
+}
+
+.nav-link.btn {
+    font-size: 0.875rem;
+    padding: 5px 10px;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+@media (max-width: 767.98px) {
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+.products{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+    /* background-color:rgb(23, 23, 23) ; */
+    /* border: 2px solid rgb(82, 78, 78); */
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+    color: black;
+}
+
+.footbox1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 28px;
+    /* background-color: rgb(23, 23, 23); */
+    margin:60px 0px 28px 0px;
+}
+
+.footbox2 p{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin: 18px 0px;
+    /* background-color:rgb(23, 23, 23) ; */
+
+}
+
+.footbox3{
+    text-align: center;
+    /* background-color:rgb(23, 23, 23) ; */
+
+}
+
+.footbox3 button{
+    background-color: transparent;
+    color: rgb(197, 0, 159);
+    padding: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+
+}
+.footbox4 p{
+    font-size: 11px;
+    font-weight: 400;
+    text-align: justify;
+    width: 100%;
+    padding: 8px 200px;
+    /* background-color:rgb(23, 23, 23) ; */
+
+}
+.footbox5{
+    /* background-color:rgb(23, 23, 23) ; */
+    
+}
+.footbox5 p{
+    font-size: 11px;
+    font-weight: 400;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    padding: 10px 5px;
+    line-height: 22px;
+    text-align: justify;
+    /* background-color:rgb(23, 23, 23) ; */
+
+}
+
+.footbox6 p{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 50px;
+    /* background-color:rgb(23, 23, 23) ; */
+
+}
