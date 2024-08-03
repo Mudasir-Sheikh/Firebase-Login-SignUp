@@ -5,6 +5,7 @@ import { getAuth , onAuthStateChanged , signOut , sendEmailVerification } from "
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
+import { doc , setDoc , getFirestore } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 
 
@@ -25,6 +26,10 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
+
 
 export{
     auth,
@@ -32,5 +37,8 @@ export{
     createUserWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
-    sendEmailVerification
+    sendEmailVerification,
+    doc,
+    setDoc,
+    db
 }

@@ -1,4 +1,5 @@
-import { auth, onAuthStateChanged, signOut ,sendEmailVerification } from "./firebase.js";
+import { auth, onAuthStateChanged, signOut, sendEmailVerification,  } from "./firebase.js";
+
 
 //the onauthSC gives the data of user if the user is login then we will put this user into session for logout
 // if we dont use this we manually have to get the user
@@ -8,15 +9,26 @@ let name = document.getElementById("name")
 let email = document.getElementById("email");
 let loader = document.getElementById("loader")
 let profile = document.getElementById("profile")
+// let username = document.getElementById("username")
+
+
+
+
+
+
+
 
 
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("User is Login Here's Details", user)
-    if (name && email){  //used to overcome error
-    name.innerHTML = user.email.slice(0, user.email.indexOf("@"))
-    email.innerHTML = user.email;}
+    if (name && email) {  //used to overcome error
+      name.innerHTML = user.email.slice(0, user.email.indexOf("@"))
+      email.innerHTML = user.email;
+      // username.innerHTML = username.value
+    }
+
 
     //Loader Functionality
     loader.style.display = "none"
@@ -24,24 +36,24 @@ onAuthStateChanged(auth, (user) => {
 
 
     //used for that if user is login then he will be directed to profile page
-    if(location.pathname !== "/Profile_ViewCart.html")
-    window.location = "/Profile_ViewCart.html"
+    if (location.pathname !== "/Profile_ViewCart.html")
+      window.location = "/Profile_ViewCart.html"
 
 
     //Email Verification for User Uncommit for use
-  //   sendEmailVerification(auth.currentUser)
-  // .then(() => {
-  //   console.log("Email Sent")
-  //   // ...
-  // });
+    //   sendEmailVerification(auth.currentUser)
+    // .then(() => {
+    //   console.log("Email Sent")
+    //   // ...
+    // });
 
 
 
   } else {
     console.log("User is Logout here's Details", user)
     //if not login then he can not directly go to profile page 
-    if (window.location.pathname !== "/Login.html" && location.pathname !== "/SignUp.html"){
-    window.location = "/Login.html"
+    if (window.location.pathname !== "/Login.html" && location.pathname !== "/SignUp.html") {
+      window.location = "/Login.html"
     }
 
 
@@ -56,12 +68,15 @@ let logout = () => {
     window.location = "Login.html"
   }).catch((error) => {
     // An error happened.
-    console.log("Error:",error)
+    console.log("Error:", error)
   });
 }
 
 
 let logoutBtn = document.getElementById("logoutBtn");
-if(logoutBtn){
-logoutBtn.addEventListener("click", logout);
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", logout);
 }
+
+
+

@@ -1,5 +1,22 @@
 //Import the Functions from our firebase file
-import { auth , createUserWithEmailAndPassword } from "./firebase.js"
+import { auth , createUserWithEmailAndPassword , setDoc, doc, db} from "./firebase.js"
+
+
+
+
+
+
+let addUserToFireStore = async (user) => {
+    const response = await setDoc(doc(db, "users", user.uid), {
+      email: user.email,
+      verfiedEmail: user.emailVerified,
+      userID:user.uid
+    });
+    console.log("User Data Added")
+  }
+
+
+
 
 
 let register = () => {
@@ -8,7 +25,6 @@ let register = () => {
     const password = document.getElementById("password")
     console.log("details:", Username.value, email.value, password.value,)
 
-
     
     createUserWithEmailAndPassword(auth, email.value, password.value)
         .then((userCredential) => {
@@ -16,6 +32,8 @@ let register = () => {
             const user = userCredential.user;
             console.log("user signedup", user)
             alert("New Account Created!\nPlease Login Now")
+            addUserToFireStore(user); //adding user data to firestore
+
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -27,8 +45,12 @@ let register = () => {
 
 }
 
+
 let SignUp_Btn = document.getElementById("signup_btn");
 SignUp_Btn.addEventListener("click", register)
+
+
+// const Username = document.getElementById("Username")
 
 
 
